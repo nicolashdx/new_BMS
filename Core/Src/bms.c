@@ -27,16 +27,16 @@ void BMS_Init(Master **BMS) {
 
 void BMS_Monitoring(Master *BMS) {
 	LTC_SendBroadcastCommand(BMS->slaves[0].config, LTC_COMMAND_ADCV);
-	uint16_t aux_minCellVoltage = UINT16_MAX;
-	uint16_t aux_maxCellVoltage = 0;
+	uint16_t temp_minV = UINT16_MAX;
+	uint16_t temp_maxV = 0;
 	for(uint8_t i = 0; i < NUM_SLAVES; i++) {
-		LTC_Read(LTC_READ_CELL, BMS->config, BMS->slaves[i]);
-		if(BMS->slaves[i]->V_MIN < aux_minCellVoltage)
-			aux_minCellVoltage = BMS->slaves[i]->V_MIN;
-		if(BMS->slaves[i]->V_MAX > aux_maxCellVoltage)
-			aux_maxCellVoltage = BMS->slaves[i]->V_MAX;
+		LTC_Read(LTC_READ_CELL, &(BMS->slaves[i]));
+		if(BMS->slaves[i].sensor.V_MIN < temp_minV)
+			temp_minV = BMS->slaves[i].sensor.V_MIN;
+		if(BMS->slaves[i].sensor.V_MAX > temp_maxV)
+			temp_maxV = BMS->slaves[i].sensor.V_MAX;
 	}
-	BMS->maxCellVoltage = aux_maxCellVoltage;
-	BMS->minCellVoltage = aux_minCellVoltage;
+	BMS->maxCellVoltage = temp_maxV;
+	BMS->minCellVoltage = temp_minV;
 	BMS->deltaVoltage = BMS->maxCellVoltage - BMS->minCellVoltage;
 }

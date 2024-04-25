@@ -14,6 +14,10 @@
 
 typedef struct Master {
     Slave slaves[NUM_SLAVES];
+
+    uint16_t maxCellVoltage;
+    uint16_t minCellVoltage;
+    uint16_t deltaVoltage;
 } Master;
 
 void BMS_Init(Master **BMS);
