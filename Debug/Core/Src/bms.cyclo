@@ -1,2 +1,3 @@
 ../Core/Src/bms.c:14:6:BMS_Init	2
-../Core/Src/bms.c:28:6:BMS_Monitoring	4
+../Core/Src/bms.c:28:6:ElectricalManagement	4
+../Core/Src/bms.c:44:6:Monitoring	1

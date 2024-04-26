@@ -25,18 +25,22 @@ void BMS_Init(Master **BMS) {
 	LTC_PEC_InitTable();
 }
 
-void BMS_Monitoring(Master *BMS) {
+void ElectricalManagement(Master *BMS){
 	LTC_SendBroadcastCommand(BMS->slaves[0].config, LTC_COMMAND_ADCV);
-	uint16_t temp_minV = UINT16_MAX;
-	uint16_t temp_maxV = 0;
-	for(uint8_t i = 0; i < NUM_SLAVES; i++) {
-		LTC_Read(LTC_READ_CELL, &(BMS->slaves[i]));
-		if(BMS->slaves[i].sensor.V_MIN < temp_minV)
-			temp_minV = BMS->slaves[i].sensor.V_MIN;
-		if(BMS->slaves[i].sensor.V_MAX > temp_maxV)
-			temp_maxV = BMS->slaves[i].sensor.V_MAX;
-	}
-	BMS->maxCellVoltage = temp_maxV;
-	BMS->minCellVoltage = temp_minV;
-	BMS->deltaVoltage = BMS->maxCellVoltage - BMS->minCellVoltage;
+		uint16_t temp_minV = UINT16_MAX;
+		uint16_t temp_maxV = 0;
+		for(uint8_t i = 0; i < NUM_SLAVES; i++) {
+			LTC_Read(LTC_READ_CELL, &(BMS->slaves[i]));
+			if(BMS->slaves[i].sensor.V_MIN < temp_minV)
+				temp_minV = BMS->slaves[i].sensor.V_MIN;
+			if(BMS->slaves[i].sensor.V_MAX > temp_maxV)
+				temp_maxV = BMS->slaves[i].sensor.V_MAX;
+		}
+		BMS->maxCellVoltage = temp_maxV;
+		BMS->minCellVoltage = temp_minV;
+		BMS->deltaVoltage = BMS->maxCellVoltage - BMS->minCellVoltage;
+}
+
+void Monitoring(Master *BMS) {
+	ElectricalManagement(BMS);
 }

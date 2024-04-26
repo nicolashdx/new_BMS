@@ -21,6 +21,7 @@ typedef struct Master {
 } Master;
 
 void BMS_Init(Master **BMS);
-void BMS_Monitoring(Master *BMS);
+void Monitoring(Master *BMS);
+void ElectricalManagement(Master *BMS);
 
 #endif
