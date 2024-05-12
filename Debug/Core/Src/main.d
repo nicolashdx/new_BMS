@@ -33,10 +33,28 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h \
- ../Core/Inc/bms.h ../Core/Inc/ltc.h ../Core/Inc/defines.h \
- ../Core/Inc/dwt_delay.h
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
+ /home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Core/Inc/bms.h ../Core/Inc/ltc.h ../Core/Inc/defines.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -72,9 +90,27 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
+/home/nicolas/Área\ de\ Trabalho/new_BMS/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Inc/bms.h:
 ../Core/Inc/ltc.h:
 ../Core/Inc/defines.h:
-../Core/Inc/dwt_delay.h:

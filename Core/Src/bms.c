@@ -13,6 +13,7 @@
 
 void BMS_Init(Master **BMS) {
 	*BMS = (Master*) calloc(1, sizeof(Master));
+
 	LTC_config* config = (LTC_config*) calloc(1, sizeof(LTC_config));
 	config->command = (LTC_command*) calloc(1 ,sizeof(LTC_command));
 	LTC_Init(config);
@@ -41,6 +42,3 @@ void ElectricalManagement(Master *BMS){
 		BMS->deltaVoltage = BMS->maxCellVoltage - BMS->minCellVoltage;
 }
 
-void Monitoring(Master *BMS) {
-	ElectricalManagement(BMS);
-}

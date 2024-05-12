@@ -86,7 +86,6 @@ void Error_Handler(void);
 
 #define ISOSPI_CS_GPIO_Port GPIOA
 #define ISOSPI_CS_Pin GPIO_PIN_5
-
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
