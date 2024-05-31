@@ -8,7 +8,6 @@
 #include "main.h"
 #include "defines.h"
 #include "ltc.h"
-#include "dwt_delay.h"
 
 #define BYTESWAP(word) ((word >> 8) + (word << 8))
 
@@ -199,7 +198,6 @@ void LTC_WriteConfigRegister(Slave* slave, uint16_t *tx_data) {
 
 void LTC_ChipSelect(uint8_t level) {
 	HAL_GPIO_WritePin(ISOSPI_CS_GPIO_Port, ISOSPI_CS_Pin , level);
-	DWT_Delay_us(10);
 }
 
 

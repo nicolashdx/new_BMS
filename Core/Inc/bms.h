@@ -13,11 +13,11 @@
 #include "defines.h"
 
 typedef struct Master {
-    Slave slaves[NUM_SLAVES];
+	uint16_t maxCellVoltage;
+	uint16_t minCellVoltage;
+	uint16_t deltaVoltage;
 
-    uint16_t maxCellVoltage;
-    uint16_t minCellVoltage;
-    uint16_t deltaVoltage;
+	Slave slaves[NUM_SLAVES];
 } Master;
 
 void BMS_Init(Master **BMS);

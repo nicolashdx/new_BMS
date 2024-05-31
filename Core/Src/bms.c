@@ -12,19 +12,24 @@
 
 
 void BMS_Init(Master **BMS) {
-	*BMS = (Master*) calloc(1, sizeof(Master));
+    *BMS = (Master*) calloc(1, sizeof(Master));
 
-	LTC_config* config = (LTC_config*) calloc(1, sizeof(LTC_config));
-	config->command = (LTC_command*) calloc(1 ,sizeof(LTC_command));
-	LTC_Init(config);
 
-	for(uint8_t i = 0; i < NUM_SLAVES; i++) {
-		(*BMS)->slaves[i].config = config;
-		(*BMS)->slaves[i].sensor.ADDR = i;
-	}
+    LTC_config* config = (LTC_config*) calloc(1, sizeof(LTC_config));
 
-	LTC_PEC_InitTable();
+    config->command = (LTC_command*) calloc(1, sizeof(LTC_command));
+
+    LTC_Init(config);
+
+
+    for (uint8_t i = 0; i < NUM_SLAVES; i++) {
+        (*BMS)->slaves[i].config = config;
+        (*BMS)->slaves[i].sensor.ADDR = i;
+    }
+
+    LTC_PEC_InitTable();
 }
+
 
 void ElectricalManagement(Master *BMS){
 	LTC_SendBroadcastCommand(BMS->slaves[0].config, LTC_COMMAND_ADCV);
@@ -37,7 +42,8 @@ void ElectricalManagement(Master *BMS){
 			if(BMS->slaves[i].sensor.V_MAX > temp_maxV)
 				temp_maxV = BMS->slaves[i].sensor.V_MAX;
 		}
-		BMS->maxCellVoltage = temp_maxV;
+		//BMS->maxCellVoltage = temp_maxV;
+		BMS->maxCellVoltage++;
 		BMS->minCellVoltage = temp_minV;
 		BMS->deltaVoltage = BMS->maxCellVoltage - BMS->minCellVoltage;
 }

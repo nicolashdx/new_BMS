@@ -83,11 +83,9 @@ void Error_Handler(void);
 #define AIR_AUX_PLUS_GPIO_Port GPIOB
 #define ERROR_LED_Pin GPIO_PIN_7
 #define ERROR_LED_GPIO_Port GPIOB
-
+/* USER CODE BEGIN Private defines */
 #define ISOSPI_CS_GPIO_Port GPIOA
 #define ISOSPI_CS_Pin GPIO_PIN_5
-/* USER CODE BEGIN Private defines */
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
